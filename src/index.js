@@ -14,6 +14,17 @@ module.exports = function toReadable (number) {
                 i++;
             }
             result = `${result}${arr_ty[i-3]}`;
+        }else{
+            let i = 0;
+            while(i<=(number/10)){
+                i++;
+            }
+            result = `${result}${arr_ty[i-3]}`;
+            i = 2;
+            while(i<=(number%10)){
+                i++;
+            }
+            result = `${result} ${one_dig_arr[i]}`;
         }
     }else if(number < 1000){
 
