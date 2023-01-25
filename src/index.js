@@ -37,7 +37,9 @@ function hundred (number){
         result = `${result}${one_digit(number / 100)}` + " hundred";
     }else{
         result = `${result}${one_digit(Math.trunc(number / 100))}` + " hundred";
-        if ((number % 100) >= 10 && (number % 100) < 20){
+        if (number%100 < 10){
+            result = `${result} ${one_digit(number%100)}`;
+        }else if ((number % 100) >= 10 && (number % 100) < 20){
             result = `${result} ${two_digits(number%100)}`;
         }else{
             result = `${result} ${ty_digits(number%100)}`;
